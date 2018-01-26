@@ -1,5 +1,6 @@
 # featuresDocumentor
 A tool to export functionalities from source code.
+
 Objective : keep the description of functionalities closed to the source code - so you don't forget one - and export a complete list of them.
 
 ## Install
