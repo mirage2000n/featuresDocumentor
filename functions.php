@@ -56,7 +56,7 @@ function myScanFile($filename, $ignore)
     $pFeatures = &$features;
 
     // Recherche de la catégorie principale
-    if (preg_match('/' . TAG_FEATURES_CATEGORIES . ' (.*)/', $content, $categories)) {
+    if (preg_match('/' . TAG_FEATURES_CATEGORIES . ' (.*)/i', $content, $categories)) {
         foreach (explode('/', $categories[1]) as $value) {
             $pFeatures = &$pFeatures[trim($value)];
         }
@@ -67,11 +67,11 @@ function myScanFile($filename, $ignore)
         //var_dump($comments);
         foreach ($comments[1] as $comment) {
             //var_dump($comment);
-            if (preg_match_all('/' . TAG_FEATURE . ' (.*)/', $comment, $featuresComment)) {
+            if (preg_match_all('/' . TAG_FEATURE . ' (.*)/i', $comment, $featuresComment)) {
                 $pSubFeatures = &$pFeatures;
 
                 // Recherche catégories
-                if (preg_match('/' . TAG_FEATURE_CATEGORIES . ' (.*)/', $comment, $categories)) {
+                if (preg_match('/' . TAG_FEATURE_CATEGORIES . ' (.*)/i', $comment, $categories)) {
                     foreach (explode('/', $categories[1]) as $value) {
                         $pSubFeatures = &$pSubFeatures[trim($value)];
                     }
