@@ -7,7 +7,8 @@ if (empty($_POST['path'])) {
 
 $path = $_POST['path'];
 $ignore = !empty($_POST['ignore']);
+$chbx = !empty($_POST['chbx']);
 
 $features = myScanDir($path, $ignore);
 
-affFeatures($features);
+affFeatures($features, $chbx);

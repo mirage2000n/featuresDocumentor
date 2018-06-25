@@ -34,7 +34,6 @@ function myScanDir($dir, $ignore)
         }
 
         if ($found) {
-            //var_dump($found);
             $features = array_merge_recursive($features, $found);
         }
     }
@@ -97,15 +96,19 @@ function myScanFile($filename, $ignore)
     return null;
 }
 
-function affFeatures(array $features)
+function affFeatures(array $features, $chbx = false)
 {
     echo '<ul>';
     foreach ($features as $cat => $feature) {
         if (is_int($cat)) {
-            echo '<li>' . $feature . '</li>';
+            echo '<li>';
+            if ($chbx) {
+                echo '<input type="checkbox" value="1" />';
+            }
+            echo $feature, '</li>';
         } else {
-            echo '<li>' . $cat;
-            affFeatures($feature);
+            echo '<li>', $cat;
+            affFeatures($feature, $chbx);
             echo '</li>';
         }
     }

@@ -27,7 +27,8 @@
                 <input type="text" value="" name="path" style="width: 100%;" />
             </div>
             <div>
-                <input type="checkbox" value="1" name="ignore" /> Inclure @ignore
+                <input type="checkbox" value="1" name="ignore" /> Inclure @ignore<br/>
+                <input type="checkbox" value="1" name="chbx" /> avec case à cocher
             </div>
             <input type="submit" value="Envoyer" />
         </form>
